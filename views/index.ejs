@@ -1,0 +1,24 @@
+<center>
+    <form action="post">
+        <table border="1">
+            <tr>
+                <td>Task No.</td>
+            <td>Task</td>
+            <td>Status</td>
+            <td>Action</td>
+            </tr>
+
+            <% task.map((val,i)=>{i=i+1 %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= val.task %></td>
+                    <td><%= val.status %></td>
+                    <td>
+                        <a href="/editTask?id=<%= val.id %>">Edit</a> ||
+                        <a href="/deleteData?deleteId=<%= val.id %>">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </form>
+</center>
